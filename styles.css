@@ -2,7 +2,7 @@
 --border-radius: 2rem;
 --card-border-radius: 1rem;
 --btn-padding: 0.6rem 2rem;
---search-padding: 0.6rem 1rem;
+--search-padding: 0.8rem 1rem;
 --card-padding: 1rem;
 --color-white: hsl(252, 30%, 100%);
 --color-gray: hsl(252, 15%, 65%);
@@ -38,7 +38,8 @@ body{
     overflow-x: hidden;
 
 }
-
+input:focus{
+    outline:0;}
 .container{
     width: 80%;
     margin: 0 auto;
@@ -106,11 +107,12 @@ nav .container{
 .search-bar{
     background: var(--color-light);
     border-radius: var(--border-radius);
-    padding: var(--seacrh-padding);
+    padding: var(--search-padding);
 }
 .search-bar input[type="search"]{
     background: transparent;
     width: 30vw;
+
 }
 
 nav .search-bar input[type="search"]::placeholder{
@@ -244,6 +246,7 @@ main .container .left .profle{
     color: var(--color-dark);
     margin-right: 1rem;
 }
+
 
 
 .middle .feeds .feed{
