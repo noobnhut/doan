@@ -1,0 +1,26 @@
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); 
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
+}
+:root
+{
+    --btn_text:#659dbd;
+    --background_item:white;
+    --title:white;
+
+}
+body{
+    background: rgb(0,146,255);
+    background: -moz-radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 100%);
+    background: radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0092ff",endColorstr="#ffffff",GradientType=1);
+    background-attachment: fixed;
+}
+
+
