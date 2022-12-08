@@ -12,15 +12,23 @@
     --btn_text:#659dbd;
     --background_item:white;
     --title:white;
+    --text:black;
 
 }
 body{
+
     background: rgb(0,146,255);
     background: -moz-radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 100%);
     background: -webkit-radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 100%);
     background: radial-gradient(circle, rgba(0,146,255,1) 0%, rgba(255,255,255,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0092ff",endColorstr="#ffffff",GradientType=1);
     background-attachment: fixed;
+}
+.container
+{
+   
+    
+    margin-top: 3rem;
 }
 
 
