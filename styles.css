@@ -347,17 +347,7 @@ main .container .left .profle{
     font-size: 0.8rem;
 }
 
-.right .messages .message .profile-pic .active{
-    width: 0.8rem;
-    height: 0.8rem;
-    border-radius: 50%;
-    border: 3px solid var(--color-white);
-    background: var(--color-success);
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    
-}
+
 
 
 
