@@ -347,10 +347,6 @@ main .container .left .profle{
     font-size: 0.8rem;
 }
 
-
-
-
-
 /* Media queries for responsive website */
 /* for laptop and big tablets */
 @media screen and (max-width:1200px) {
@@ -390,7 +386,10 @@ main .container .left .profle{
         bottom: 0;
         right: 0;
     }
-   
+    main .container .left .profile
+    {
+        display: none;
+    }
     main .container .middle{
         grid-column: 1/3;   
     }
