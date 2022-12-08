@@ -43,6 +43,10 @@ body{
     width: 80%;
     margin: 0 auto;
 }
+.profile
+{
+   margin: 10rem;
+}
 
 .profile-pic{
     width: 2.7rem;
