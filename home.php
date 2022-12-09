@@ -25,23 +25,7 @@
 
      <?php 
      include "./nav.php"?>
-            <div class="container">
-                <h2 class="logo">404NotFound</h2>
-                <div class="search-bar">
-                    <i class="uil uil-search"></i>
-                    <input
-                    type="search"
-                    placeholder="Tìm kiếm gì đó nào ......."
-                    />
-                </div>
-                <div class="create">
-                    <label class="btn btn-primary" for="">Đăng bài</label>
-                    <div class="profile-pic">
-                        <img src="images/profile-8.jpg" alt="pic 1" />
-                    </div>
-                </div>
-            </div>
-      </nav>
+          
 
       <main>
           <div class="container">
@@ -60,16 +44,16 @@
                     <a class="menu-item active">
                       <span><i class="uil uil-home"></i></span> <h3>Trang chủ</h3>
                     </a>
-                    <a class="menu-item " href="./information.html">
+                    <a class="menu-item " href="./information.php">
                       <span><i class="uil uil-user"></i></span> <h3>Thông tin cá nhân</h3>
                     </a>
-                    <a class="menu-item " href="./post.html">
+                    <a class="menu-item " href="./post.php">
                         <span><i class="uil uil-upload-alt"></i></span> <h3>Bài viết</h3>
                       </a>
-                      <a class="menu-item "href="./post_img.html">
+                      <a class="menu-item "href="./post_img.php">
                         <span><i class="uil uil-image"></i></span> <h3>Hình ảnh</h3>
                       </a>
-                      <a class="menu-item "href="./post_video.html">
+                      <a class="menu-item "href="./post_video.php">
                         <span><i class="uil uil-video"></i></span> <h3>Video</h3>
                       </a>
                     <a class="menu-item ">
@@ -184,42 +168,10 @@
               </div>
               
             <?php include "./right.php"?>
-                  <div class="messages">
-                    <div class="heading">
-                        <h4>Thông tin ứng dụng</h4>
-                    </div>
-                    <div class="message">
-                        <div class="profile-pic">
-                            <img src="images/item_up2.png">
-                        </div>
-                        <div class="message-body">
-                            <h5>@noobnhut</h5>
-                            <p class="text-muted">Hãy tải lên một điều gì đó đi nào</p>
-                        </div>
-                    </div>                             
-                    <div class="message">
-                        <div class="profile-pic">
-                            <img src="images/item_up.png">
-                        </div>
-                        <div class="message-body">
-                            <h5>Thuộc về 404NotFound</h5>
-                            <p class="text-muted">Hãy tải lên một điều gì đó đi nào</p>
-                        </div>
-                    </div>  
-                    <div class="message">
-                        <div class="profile-pic">
-                            <img src="images/item_up1.png">
-                        </div>
-                        <div class="message-body">
-                            <h5>Nơi giao lưu với tất cả mọi người trên mạng xã hội</h5>
-                            <p class="text-muted">Hãy tải lên một điều gì đó đi nào</p>
-                        </div>
-                    </div>                                                                     
-                </div>
+                 
+                 
       
-              </div>
-          </div>
-      </main>
+                 </main>
 
         <script src="index.js"></script>
   </body>

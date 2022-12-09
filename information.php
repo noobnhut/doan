@@ -17,20 +17,7 @@
 <body>
 
   <?php include "./nav.php"?>
-        <div class="container">
-            <h2 class="logo">404NotFound</h2>
-            <div class="search-bar">
-                <i class="uil uil-search"></i>
-                <input type="search" placeholder="Tìm kiếm gì đó nào ......." />
-            </div>
-            <div class="create">
-                <label class="btn btn-primary" for="">Đăng bài</label>
-                <div class="profile-pic">
-                    <img src="images/profile-8.jpg" alt="pic 1" />
-                </div>
-            </div>
-        </div>
-    </nav>
+       
 
     <main>
         <div class="container">
@@ -46,7 +33,7 @@
                     </div>
                 </a>
                 <div class="sidebar">
-                    <a class="menu-item " href="./index.html">
+                    <a class="menu-item " href="./home.php">
                         <span><i class="uil uil-home"></i></span>
                         <h3>Trang chủ</h3>
                     </a>
@@ -54,15 +41,15 @@
                         <span><i class="uil uil-user"></i></span>
                         <h3>Thông tin cá nhân</h3>
                     </a>
-                    <a class="menu-item " href="./post.html">
+                    <a class="menu-item " href="./post.php">
                         <span><i class="uil uil-upload-alt"></i></span>
                         <h3>Bài viết</h3>
                     </a>
-                    <a class="menu-item "  href="./post_img.html">
+                    <a class="menu-item "  href="./post_img.php">
                         <span><i class="uil uil-image"></i></span>
                         <h3>Hình ảnh</h3>
                     </a>
-                    <a class="menu-item "  href="./post_video.html">
+                    <a class="menu-item "  href="./post_video.php">
                         <span><i class="uil uil-video"></i></span>
                         <h3>Video</h3>
                     </a>

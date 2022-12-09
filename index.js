@@ -6,7 +6,7 @@ const imgArea = document.querySelector('.img-area');
 
 selectImage.addEventListener('click', function () {
 	inputFile.click();
-})
+});
 
 inputFile.addEventListener('change', function () {
 	const image = this.files[0]
@@ -26,4 +26,4 @@ inputFile.addEventListener('change', function () {
 	} else {
 		alert("Image size more than 2MB");
 	}
-})
+});
