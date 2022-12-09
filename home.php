@@ -23,7 +23,8 @@
   </head>
   <body>
 
-      <nav>
+     <?php 
+     include "./nav.php"?>
             <div class="container">
                 <h2 class="logo">404NotFound</h2>
                 <div class="search-bar">
@@ -182,7 +183,7 @@
                 </div>
               </div>
               
-              <div class="right">
+            <?php include "./right.php"?>
                   <div class="messages">
                     <div class="heading">
                         <h4>Thông tin ứng dụng</h4>

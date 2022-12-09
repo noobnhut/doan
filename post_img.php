@@ -16,7 +16,7 @@
 
 <body>
 
-    <nav>
+<?php  include "./nav.php"?>
         <div class="container">
             <h2 class="logo">404NotFound</h2>
             <div class="search-bar">
@@ -54,15 +54,15 @@
                         <span><i class="uil uil-user"></i></span>
                         <h3>Thông tin cá nhân</h3>
                     </a>
-                    <a class="menu-item active" href="#">
+                    <a class="menu-item " href="./post.html">
                         <span><i class="uil uil-upload-alt"></i></span>
                         <h3>Bài viết</h3>
                     </a>
-                    <a class="menu-item " href="./post_img.html">
+                    <a class="menu-item active " href="#">
                         <span><i class="uil uil-image"></i></span>
                         <h3>Hình ảnh</h3>
                     </a>
-                    <a class="menu-item " href="./post_video.html">
+                    <a class="menu-item "  href="./post_video.html">
                         <span><i class="uil uil-video"></i></span>
                         <h3>Video</h3>
                     </a>
@@ -76,14 +76,21 @@
             </div>
 
             <div class="middle">
-                  
                 <div class="content_post">
                     <form action="#">
                         <h2>Bài viết</h2>
                         <label for="title">Tên bài viết:</label>
                         <input type="text" class="field" name="title_post" placeholder="Nhập tên bài viết">
-                        <label for="title">Nội dung bài viết:</label>
+                        <label for="title">Nội dung bài viết</label>
                         <textarea placeholder="Nhập nội dung bài đăng" class="field" name="content_post"></textarea>
+                        <label for="title">Tải ảnh lên:</label>
+                        <input type="file" id="file" accept="image/*" hidden>
+                        <div class="img-area" data-img="">
+                            <i class='icon uil uil-upload'></i>
+                            <p>Chọn ảnh tải lên nào</p>
+                        
+                        <button class="select-image">Chọn ảnh nào</button>
+                       </div>
                         <button class="btn">Đăng bài viết</button>
                         <button class="btn">Hủy đăng bài</button>
 
@@ -93,41 +100,7 @@
                 
             </div>
 
-            <div class="right">
-                <div class="messages">
-                  <div class="heading">
-                      <h4>Thông tin ứng dụng</h4>
-                  </div>
-                  <div class="message">
-                      <div class="profile-pic">
-                          <img src="images/item_up2.png">
-                      </div>
-                      <div class="message-body">
-                          <h5>@noobnhut</h5>
-                          <p class="text-muted">Hãy tải lên một điều gì đó đi nào</p>
-                      </div>
-                  </div>                             
-                  <div class="message">
-                      <div class="profile-pic">
-                          <img src="images/item_up.png">
-                      </div>
-                      <div class="message-body">
-                          <h5>Thuộc về 404NotFound</h5>
-                          <p class="text-muted">Hãy tải lên một điều gì đó đi nào</p>
-                      </div>
-                  </div>  
-                  <div class="message">
-                      <div class="profile-pic">
-                          <img src="images/item_up1.png">
-                      </div>
-                      <div class="message-body">
-                          <h5>Nơi giao lưu với tất cả mọi người trên mạng xã hội</h5>
-                          <p class="text-muted">Hãy tải lên một điều gì đó đi nào</p>
-                      </div>
-                  </div>                                                                     
-              </div>
-    
-            </div>
+            <?php  include "./right.php"?>
         </div>
     </main>
 
