@@ -224,8 +224,25 @@ main .container .left .profle{
     overflow: hidden;
 }
 
-
-
+.middle .contents .head
+{
+    text-align: center;
+}
+.middle .contents .avatar
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.middle .content .information .info_space{
+    display: flex;
+    padding: 0.5rem;
+    margin:0.5rem;
+}
+.middle .content  .info_space h4
+{
+    padding-right: 0.4rem;
+}
 
 .middle .create-post{
     width: 100%;
@@ -247,8 +264,7 @@ main .container .left .profle{
     margin-right: 1rem;
 }
 
-
-
+.middle .contents .content,
 .middle .feeds .feed{
     background: var(--color-white);
     border-radius: var(--card-border-radius);
