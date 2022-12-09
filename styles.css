@@ -320,7 +320,30 @@ main .container .left .profle{
     margin-left: 0.5rem;
 }
 
-
+.middle .content_post{
+  background-color: white;
+  padding: 0.5rem;
+  margin-top: 2rem;
+  border-radius: var(--card-border-radiusgit );
+}
+.middle .content_post form
+{
+    padding: 25px 40px;
+}
+.middle .content_post form .field
+{
+    width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+textarea{
+	min-height: 150px;
+}
 .main .container .right{
     height: max-content;
     position: sticky;
