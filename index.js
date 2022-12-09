@@ -1,39 +1,29 @@
-//sidebar
-const menuItems = document.querySelectorAll('.menu-item');
-
-const messages = document.querySelector('.messages');
-const message = messages.querySelectorAll('.message');
-const messageSearch = document.querySelector('#message-search');
-
-//remove active class from all menu items
-const changeActiveItem = () => {
-    menuItems.forEach(item => {
-        item.classList.remove('active');
-    })
-}
- 
 
 
+const selectImage = document.querySelector('.select-image');
+const inputFile = document.querySelector('#file');
+const imgArea = document.querySelector('.img-area');
 
-const searchMessage = () => {
-    const val = messageSearch.value.toLowerCase();
-    message.forEach(chat => {
-        let name=chat.querySelector('h5').textContent.toLowerCase();
-        if(name.indexOf(val) != -1){
-            chat.style.display = 'flex';
-        } else{
-            chat.style.display = 'none';
-        }
-    })
-}
+selectImage.addEventListener('click', function () {
+	inputFile.click();
+})
 
-messageSearch.addEventListener('keyup', searchMessage);
-
-
-messagesNotification.addEventListener('click', () => {
-    messages.style.boxShadow = '0 0 1rem var(--color-primary)';
-    messagesNotification.querySelector('.notification-count').style.display = 'none';
-    setTimeout(() => {
-        messages.style.boxShadow = 'none';
-    }, 2000);
+inputFile.addEventListener('change', function () {
+	const image = this.files[0]
+	if(image.size < 2000000) {
+		const reader = new FileReader();
+		reader.onload = ()=> {
+			const allImg = imgArea.querySelectorAll('img');
+			allImg.forEach(item=> item.remove());
+			const imgUrl = reader.result;
+			const img = document.createElement('img');
+			img.src = imgUrl;
+			imgArea.appendChild(img);
+			imgArea.classList.add('active');
+			imgArea.dataset.img = image.name;
+		}
+		reader.readAsDataURL(image);
+	} else {
+		alert("Image size more than 2MB");
+	}
 })
