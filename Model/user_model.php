@@ -1,8 +1,9 @@
-<?php 
-  include "./Util/db.php";
-  
+
+<?php  
+
+  include "../Util/db.php";
   class user_model extends db
-  {
+    {
       private $id;
       private $name;
       private $name_acc;
@@ -43,7 +44,6 @@
       {
           return $this->getTable('user_profile');
       }
-      
           
   }
 

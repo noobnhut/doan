@@ -16,7 +16,7 @@
 
 <body>
 
-<?php  include "./nav.php"?>
+<?php  include "./component/nav.php"?>
        
 
     <main>
@@ -80,7 +80,7 @@
                 
             </div>
 
-            <?php  include "./right.php"?>
+            <?php  include "./component/right.php"?>
     </main>
 
     <script src="index.js"></script>

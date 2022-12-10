@@ -1,6 +1,5 @@
-<?php 
- include "./Model/user_model.php";
- $user = new user_model();
- 
- var_dump($user->getData());
+<?php
+include "./user_model.php";
+$a = new user_model();
+var_dump($a->getData());
 ?>
