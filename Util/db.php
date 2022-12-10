@@ -58,8 +58,7 @@ class db
 		  $stm->execute($arr);
 		  return $stm->rowCount();
 	  }
-
-
+     
     function login($sql,$username,$password)
     {
       $this->open();

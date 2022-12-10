@@ -1,5 +1,7 @@
 <?php
 include "./user_model.php";
-$a = new user_model();
-var_dump($a->getData());
+
+$b = new user_model(null,"nhut","nhut2","nhut2","HocMom");
+var_dump($b);
+$b->registerUser();
 ?>
