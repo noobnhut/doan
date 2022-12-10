@@ -19,7 +19,7 @@
       rel="shortcut icon"
       href="./images/favicon.ico"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
 
