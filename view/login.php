@@ -25,24 +25,22 @@
   
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="../Controller/register.php" method="POST">
 			<h1>Tạo tài khoản</h1>
-			<input type="text" placeholder="Tên tài khoản" />
-			<input type="text" placeholder="Họ và tên" />
-			<input type="text" placeholder="Số điện thoại" />
-			<input type="text" placeholder="Thành phố bạn đang ở" />
-			<input type="password" placeholder="Mật khẩu" />
-			<button>Đăng ký</button>
+			<input type="text" placeholder="Tên tài khoản" name="username" />
+			<input type="text" placeholder="Họ và tên" name="user_acc" />
+			<input type="text" placeholder="Thành phố bạn đang ở" name="country" />
+			<input type="password" placeholder="Mật khẩu"  name="password"/>
+			<button type="submit" name="register">Đăng ký</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form action="../Controller/login.php" method="POST">
 			<h1>Đăng nhập</h1>
-			
-			<input type="text" placeholder="Nhập tài khoản" />
-			<input type="password" placeholder="Nhập mật khẩu" />
+			<input type="text" placeholder="Nhập tài khoản" name="user_acc"/>
+			<input type="password" placeholder="Nhập mật khẩu" name="password" />
 			<a href="#">Quên mật khẩu</a>
-			<button>Đăng nhập</button>
+			<button type="submit" name="login">Đăng nhập</button>
 		</form>
 	</div>
 	<div class="overlay-container">

@@ -19,13 +19,4 @@
  {
     echo "thoi xong";
  }
-
- if(isset($btn_login))
- {
-    echo "start";
- }
- else
- {
-    echo "end";
- }
 ?>
