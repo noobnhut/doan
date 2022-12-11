@@ -1,6 +1,4 @@
-
 <?php  
-
   include "../Util/db.php";
   class user_model extends db
     {
@@ -8,15 +6,17 @@
       private $name;
       private $name_acc;
       private $password;
-      private $country;
+      private $numberphone;
+      private $img;
       private $table_name = "user_profile";
-      function __construct($id='',$name='',$name_acc='',$password='',$country='')
+      function __construct($id='',$name='',$name_acc='',$password='',$numberphone='',$img='')
       {
         $this->id=$id;
         $this->name=$name;
         $this->name_acc=$name_acc;
         $this->password=$password;
-        $this->country=$country;
+        $this->numberphone=$numberphone;
+        $this->img=$img;
       }
 
       function get_id()
@@ -35,20 +35,25 @@
       {
         return $this->password;
       }
-      function get_country()
+      function get_numberphone()
       {
-        return $this->country;
+        return $this->numberphone;
+      }
+      function get_img()
+      {
+        return $this->img;
       }
 
       function getData()
       {
           return $this->getTable($this->table_name);
       }
+     
        //  chi tiet 1 dong -> dang array()
-    function detail($id)
+    function details($var)
     {
-              $sql="select * from $this->table_name where id=?";
-              $arr= array($id);
+              $sql="select * from $this->table_name where '$var' = ?";
+              $arr= array($var);
               $data= parent::selectQuery($sql, $arr);
               if (Count($data)>0)
                   return $data[0];
@@ -68,12 +73,14 @@
      $this ->name,
      $this->name_acc,
      $this->password,
-     $this->country
+     $this->numberphone,
+     $this->img
     ];
-    $sql = "INSERT INTO `user_profile` (`id`, `name`, `user_acc`, `password`, `country`) VALUES (?,?,?,?,?);";
+    $sql = "INSERT INTO `user_profile` (`id`, `name`, `user_acc`, `password`, `numberphone`, `location_img`) VALUES (?,?,?,?,?,?);";
     $this->updateQuery($sql,$data);
    }
    
+
           
   }
 

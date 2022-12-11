@@ -27,11 +27,12 @@
 	<div class="form-container sign-up-container">
 		<form action="../Controller/user.php" method="POST">
 			<h1>Tạo tài khoản</h1>
-			<input type="text" placeholder="Tên tài khoản" name="username" />
-			<input type="text" placeholder="Họ và tên" name="user_acc" />
-			<input type="text" placeholder="Thành phố bạn đang ở" name="country" />
+			<input type="text" placeholder="Tên tài khoản" name="user_acc" />
+			<input type="text" placeholder="Họ và tên" name="username" />
+			<input type="text" placeholder="Số điện thoại" name="numberphone" />
 			<input type="password" placeholder="Mật khẩu"  name="password"/>
 			<button type="submit" name="register">Đăng ký</button>
+			
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -43,6 +44,7 @@
 			<button type="submit" name="login">Đăng nhập</button>
 		</form>
 	</div>
+	
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
@@ -57,6 +59,8 @@
 			</div>
 		</div>
 	</div>
+
+	
 </div>
   </body>
   <script>

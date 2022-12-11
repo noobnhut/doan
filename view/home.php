@@ -22,22 +22,23 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-
      <?php 
      include "./component/nav.php"?>
-          
-
       <main>
           <div class="container">
-
               <div class="left">
                   <a class="profile">
                       <div class="profile-pic">
                         <img src="./images/profile-8.jpg">
                       </div>
                       <div class="handle">
-                          <h4>NoobNhut</h4>
-                          <p class="text-muted">@noobnhut</p>
+                           <?php
+                             session_start();
+                             if($_SESSION["is_user"]==true)
+                              echo "<h4>" . $_SESSION["username"] . "</h4>";
+                              echo "<p>" . $_SESSION["user_acc"] . "</p>";
+
+                            ?>
                       </div>
                   </a>
                   <div class="sidebar">
@@ -56,7 +57,8 @@
                       <a class="menu-item "href="./post_video.php">
                         <span><i class="uil uil-video"></i></span> <h3>Video</h3>
                       </a>
-                    <a class="menu-item ">
+                    <a class="menu-item" href="../Controller/logout.php">
+                     
                       <span><i class="uil uil-exit"></i></span> <h3>Đăng xuất</h3>
                     </a>
                      

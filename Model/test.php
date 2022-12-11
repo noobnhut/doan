@@ -1,7 +1,17 @@
 <?php
 include "./user_model.php";
 
-$b = new user_model(null,"nhut","nhut2","nhut2","HocMom");
-var_dump($b);
-$b->registerUser();
+$user_acc='nhut';
+$password='nhut';
+$b = new user_model();
+$var = 'user_acc';
+var_dump($b->details($var));
+$c = $b->details($var);
+echo $c['name'];
+
+ 
+
+   
+   
+
 ?>

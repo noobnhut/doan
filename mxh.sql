@@ -4,8 +4,9 @@ CREATE TABLE `user_profile` (
   `name` varchar(100),
   `user_acc` varchar(100),
   `password` varchar(64),
-  `country` varchar(100)
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;;
+  `numberphone` int,
+  `location_img` varchar(100)
+);
 
 -- CREATE TABLE `user_post` (
 --   `id` int NOT NULL auto_increment,

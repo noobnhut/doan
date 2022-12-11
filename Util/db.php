@@ -20,7 +20,7 @@ class db
     {
         try {
           $this->conn = new PDO('mysql:host=' .$this->servername .';dbname=' . $this->dbname, $this->username, $this->password);
-  // set the PDO error mode to exception
+         // set the PDO error mode to exception
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $this->conn;
         
@@ -34,7 +34,6 @@ class db
       $db = new db();
       $this->conn=$db->connected();
     }
-    
     function getTable($tableName)
      {
        $this->open();
@@ -42,8 +41,8 @@ class db
 		   $stm->execute();
 		   return $stm->fetchAll();
      }
-
-    function selectQuery($sql, $arr=array())
+   
+     function selectQuery($sql, $arr=array())
 	   {
       $this->open();
 		  $stm = $this->conn->prepare($sql);
@@ -58,7 +57,6 @@ class db
 		  $stm->execute($arr);
 		  return $stm->rowCount();
 	  }
-     
     function login($sql,$username,$password)
     {
       $this->open();
@@ -77,6 +75,9 @@ class db
       }
 
     }
+
+
+  
 }
 
 
