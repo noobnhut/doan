@@ -11,7 +11,12 @@
                 <div class="create">
                     <label class="btn btn-primary" for="">Đăng bài</label>
                     <div class="profile-pic">
-                        <img src="images/profile-8.jpg" alt="pic 1" />
+                    <?php 
+                           session_start();
+                           if($_SESSION["is_user"]==true)
+                           echo '<img src="./images/'.$_SESSION["location_img"].'">';
+
+                            ?>
                     </div>
                 </div>
             </div>

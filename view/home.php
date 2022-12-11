@@ -28,15 +28,15 @@
           <div class="container">
               <div class="left">
                   <a class="profile">
-                      <div class="profile-pic">
-                        <img src="./images/profile-8.jpg">
-                      </div>
-                      <div class="handle">
-                           <?php
-                             session_start();
-                             if($_SESSION["is_user"]==true)
+                           <?php 
+                  
+                           if($_SESSION["is_user"]==true)
+                           echo '<div class="profile-pic">';
+                           echo '<img src="./images/'.$_SESSION["location_img"].'">';
+                           echo '</div>';
+                           echo ' <div class="handle">';                     
                               echo "<h4>" . $_SESSION["username"] . "</h4>";
-                              echo "<p>" . $_SESSION["user_acc"] . "</p>";
+                              echo "<p>@" . $_SESSION["user_acc"] . "</p>";
 
                             ?>
                       </div>

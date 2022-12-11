@@ -50,14 +50,19 @@
       }
      
        //  chi tiet 1 dong -> dang array()
-    function details($var)
+       function detail($id)
+       {
+         $sql="select * from $this->table_name where id=? ";
+         $arr= array($id);
+         $data= parent::selectQuery($sql, $arr);
+         if (Count($data)>0)
+           return $data[0];
+         return 0;
+       }
+    function searchDB($keyword, $var)
     {
-              $sql="select * from $this->table_name where '$var' = ?";
-              $arr= array($var);
-              $data= parent::selectQuery($sql, $arr);
-              if (Count($data)>0)
-                  return $data[0];
-              return 0;
+      $sql="SELECT * FROM $this->table_name WHERE `$var` LIKE :keyword;";
+      return  $this->search($keyword,$sql);
     }
            
    

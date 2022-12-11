@@ -66,8 +66,9 @@ class db
       $data = $stm->fetch(PDO::FETCH_ASSOC);
       if($row>0)
       {
-        $_SESSION['id']=$data['id'];
-        return 1;
+        $id =$data['id'];
+        $_SESSION['id']=$id;
+        return $id;
       }
       else
       {
@@ -75,7 +76,20 @@ class db
       }
 
     }
+  
 
+    function search($keyword,$sql)
+    {
+      $this->open();
+   $q=$this->conn->prepare($sql);
+   $q->bindValue(':keyword','%'.$keyword.'%');
+   $q->execute();
+   $arr[]='';
+   while ($r=$q->fetch(PDO::FETCH_ASSOC)) {
+        $arr =$r;
+}
+return $arr;
+    }
 
   
 }

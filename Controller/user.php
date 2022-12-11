@@ -9,13 +9,15 @@ include "../Model/user_model.php";
   $user_acc=$_POST["user_acc"];
   $password=$_POST["password"];
   $b = new user_model();
-  $c=$b->details('user_acc');
+  $id = $b->loginUser($user_acc,$password);
+  $c=$b->detail($id);
   session_start();
-   if($b->loginUser($user_acc,$password)==1)
+   if($id>1)
    {
       $_SESSION["is_user"]=true;
       $_SESSION["user_acc"]=$user_acc;
       $_SESSION["username"]=$c['name'];  
+      $_SESSION["location_img"]=$c['location_img'];
         header("Location:http://localhost/doan/view/home.php");
    }
    else

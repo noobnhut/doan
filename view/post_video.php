@@ -22,15 +22,20 @@
         <div class="container">
 
             <div class="left">
-                <a class="profile">
-                    <div class="profile-pic">
-                        <img src="./images/profile-8.jpg">
-                    </div>
-                    <div class="handle">
-                        <h4>NoobNhut</h4>
-                        <p class="text-muted">@noobnhut</p>
-                    </div>
-                </a>
+            <a class="profile">
+                           <?php 
+                          
+                           if($_SESSION["is_user"]==true)
+                           echo '<div class="profile-pic">';
+                           echo '<img src="./images/'.$_SESSION["location_img"].'">';
+                           echo '</div>';
+                           echo ' <div class="handle">';                     
+                              echo "<h4>" . $_SESSION["username"] . "</h4>";
+                              echo "<p>@" . $_SESSION["user_acc"] . "</p>";
+
+                            ?>
+                      </div>
+                  </a>
                 <div class="sidebar">
                     <a class="menu-item " href="./home.php">
                         <span><i class="uil uil-home"></i></span>
