@@ -25,7 +25,7 @@
   
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="../Controller/user.php" method="POST">
+		<form action="" method="POST">
 			<h1>Tạo tài khoản</h1>
 			<input type="text" placeholder="Tên tài khoản" name="user_acc" />
 			<input type="text" placeholder="Họ và tên" name="username" />

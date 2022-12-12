@@ -64,8 +64,6 @@
       $sql="SELECT * FROM $this->table_name WHERE `$var` LIKE :keyword;";
       return  $this->search($keyword,$sql);
     }
-           
-   
     function loginUser($username,$password)
    {
             $sql="select id from $this->table_name  where user_acc = ? and password = ?";
@@ -84,9 +82,20 @@
     $sql = "INSERT INTO `user_profile` (`id`, `name`, `user_acc`, `password`, `numberphone`, `location_img`) VALUES (?,?,?,?,?,?);";
     $this->updateQuery($sql,$data);
    }
-   
+   function updateUser()
+   {
+    $data = [
+      $this->id,
+      $this ->name,
+      $this->name_acc,
+      $this->password,
+      $this->numberphone,
+      $this->img
+     ];
+     $sql = "UPDATE $this->table_name SET  name= ?, user_acc= ?, password = ?,numberphone = ? , location_img = ? WHERE id=?";
+
+     $this->updateQuery($sql,$data);
+   }
 
           
   }
-
-?>
