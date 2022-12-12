@@ -12,9 +12,7 @@ session_start();
     $id = $b->loginUser($user_acc,$password);
     $c=$b->detail($id);
     if(isset($btn_login)&&$id>1)
-    {
-     
-      
+    {    $_SESSION['id']=$id;
          $_SESSION["is_user"]=true;
          $_SESSION["user_acc"]=$user_acc;
          $_SESSION["username"]=$c['name'];  

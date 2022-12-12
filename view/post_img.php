@@ -28,7 +28,7 @@
                           
                            if($_SESSION["is_user"]==true)
                            echo '<div class="profile-pic">';
-                           echo '<img src="./images/'.$_SESSION["location_img"].'">';
+                           echo '<img src="../images/'.$_SESSION["location_img"].'">';
                            echo '</div>';
                            echo ' <div class="handle">';                     
                               echo "<h4>" . $_SESSION["username"] . "</h4>";
@@ -66,23 +66,21 @@
 
             <div class="middle">
                 <div class="content_post">
-                    <form action="#">
+                    <form action="../Controller//post.php" method="POST" enctype="multipart/form-data">
                         <h2>Bài viết</h2>
                         <label for="title">Tên bài viết:</label>
-                        <input type="text" class="field" name="title_post" placeholder="Nhập tên bài viết">
+                        <input type="text" class="field" name="title" placeholder="Nhập tên bài viết">
                         <label for="title">Nội dung bài viết</label>
-                        <textarea placeholder="Nhập nội dung bài đăng" class="field" name="content_post"></textarea>
+                        <textarea placeholder="Nhập nội dung bài đăng" class="field" name="written_text"></textarea>
                         <label for="title">Tải ảnh lên:</label>
-                        <input type="file" id="file" accept="image/*" hidden>
+                        <input type="file" name="img_location" id="file" accept="image/*" hidden>
                         <div class="img-area" data-img="">
                             <i class='icon uil uil-upload'></i>
                             <p>Chọn ảnh tải lên nào</p>
                         
-                        <button class="select-image">Chọn ảnh nào</button>
+                        <label name="up_img" class="select-image" >Chọn ảnh nào</label>
                        </div>
-                        <button class="btn">Đăng bài viết</button>
-                        <button class="btn">Hủy đăng bài</button>
-
+                        <button name="up_post" class="btn">Đăng bài viết</button>
                     </form>
                 </div>
 

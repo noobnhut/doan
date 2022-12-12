@@ -14,7 +14,7 @@
                     <?php 
                            session_start();
                            if($_SESSION["is_user"]==true)
-                           echo '<img src="./images/'.$_SESSION["location_img"].'">';
+                           echo '<img src="../images/'.$_SESSION["location_img"].'">';
 
                             ?>
                     </div>

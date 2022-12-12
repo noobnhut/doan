@@ -27,7 +27,7 @@
                           
                            if($_SESSION["is_user"]==true)
                            echo '<div class="profile-pic">';
-                           echo '<img src="./images/'.$_SESSION["location_img"].'">';
+                           echo '<img src="../images/'.$_SESSION["location_img"].'">';
                            echo '</div>';
                            echo ' <div class="handle">';                     
                               echo "<h4>" . $_SESSION["username"] . "</h4>";

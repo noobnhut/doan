@@ -1,21 +1,12 @@
 <?php
-include "./user_model.php";
+include "./post_model.php";
 
-
-$user_acc='nhut1234';
-$password='nhut1234';
-$b = new user_model();
-$id =$b->loginUser($user_acc,$password);
-var_dump($b);
-if($id>0)
+session_start();
+$a = new post_model();
+$b=$a->getPost();
+var_dump($b);  
+foreach ($b as $x => $val)
 {
-    $c = new user_model($id,'nhutU','nhutU','nhutU','000','feed-1.jpg');
-    $c->updateUser();
+    echo  $val['id']." ";
 }
-
-var_dump($c)
-
-   
-   
-
 ?>

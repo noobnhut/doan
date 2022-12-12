@@ -25,7 +25,7 @@
                   
                            if($_SESSION["is_user"]==true)
                            echo '<div class="profile-pic">';
-                           echo '<img src="./images/'.$_SESSION["location_img"].'">';
+                           echo '<img src="../images/'.$_SESSION["location_img"].'">';
                            echo '</div>';
                            echo ' <div class="handle">';                     
                               echo "<h4>" . $_SESSION["username"] . "</h4>";
@@ -71,8 +71,7 @@
                 </div>
                 <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
                 <input type="submit" value="Đăng bài" class="btn btn-primary">
-            </form>
-
+ 
             <div class="feeds">
                 <div class="feed">
                     <div class="head">
@@ -84,7 +83,6 @@
                         </div>
                         <div class="info">
                             <h3>Vũ Cao Phi</h3>
-                            <small>Tân Phú, 15 phút </small>
                         </div>
                         <SPAN class="edit"><i class="uil uil-ellipsis-h"></i></SPAN>
                     </div>
