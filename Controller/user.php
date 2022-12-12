@@ -10,7 +10,7 @@ session_start();
     $password=$_POST["password"];
     $b = new user_model();
     $id = $b->loginUser($user_acc,$password);
-    $c=$b->detail($id);
+    $c=$b->detailUser($id);
     if(isset($btn_login)&&$id>1)
     {    $_SESSION['id']=$id;
          $_SESSION["is_user"]=true;

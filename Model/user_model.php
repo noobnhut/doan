@@ -1,5 +1,5 @@
 <?php  
-  include "../Util/db.php";
+require("../Util/db.php");
   class user_model extends db
     {
       private $id;
@@ -50,7 +50,7 @@
       }
      
        //  chi tiet 1 dong -> dang array()
-       function detail($id)
+       function detailUser($id)
        {
          $sql="select * from $this->table_name where id=? ";
          $arr= array($id);

@@ -41,7 +41,8 @@ class db
 		   $stm->execute();
 		   return $stm->fetchAll();
      }
-   
+    
+    
      function selectQuery($sql, $arr=array())
 	   {
       $this->open();
@@ -57,6 +58,7 @@ class db
 		  $stm->execute($arr);
 		  return $stm->rowCount();
 	  }
+    
     function login($sql,$username,$password)
     {
       $this->open();

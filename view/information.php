@@ -64,9 +64,7 @@
                 </div>
             </div>
 
-            <div class="middle">
-
-
+            <div class="middle"> 
                 <form class="create-post">
                     <div class="profile-pic">
                         <img src="images/profile-8.jpg" alt="">
@@ -74,9 +72,15 @@
                     <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
                     <input type="submit" value="Đăng bài" class="btn btn-primary">
                 </form>
-
+               <?php 
+                require("../Model/post_model.php");
+                $id = $_SESSION["id"];
+                $a = new post_model();
+                $b=$a-> getPostByIdUser($id);
+                $c=$a->detailUser($id);
+               
+                ?> 
                 <div class="contents">
-
                     <div class="content">
                         <div class="head">
                             <h3>Thông tin cá nhân</h3>
@@ -84,20 +88,16 @@
                         <div class="information">
                             <div class="info_space">
                                 <div class="avatar">
-                                <img src="images/profile-2.jpg" alt="">
+                                <img style="height: 300px;" src="../images/<?php echo $c["location_img"]?>" alt="">
                                 </div>
                             </div>
                             <div class="info_space">
                                 <h4 class="info">Họ và tên:</h4>
-                                <p class="info_text">Nguyễn Minh Nhựt</p>
+                                <p class="info_text"><?php echo $c["name"]?></p>
                             </div>
                             <div class="info_space">
-                                <h4 class="info">Email:</h4>
-                                <p class="info_text">nguyen.nhut.99.2018@gmail.com</p>
-                            </div>
-                            <div class="info_space">
-                                <h4 class="info">Số điện thoại:</h4>
-                                <p class="info_text">0929518557</p>
+                                <h4 class="info">Số điện thoại</h4>
+                                <p class="info_text"><?php echo $c["numberphone"]?></p>
                             </div>
                             <div class="info_space">
                            <input type="submit" value="Chỉnh sửa " class="btn btn-primary"> 
@@ -105,60 +105,61 @@
 
                         </div>
                     </div>
-
-
                 </div>
-                   <div class="feeds">
-                    <div class="feed">
-                        <div class="head"><h2>Danh sách bài đăng</h2></div>
+                   <?php 
+                      foreach ($b as $x => $val):
+                    ?> 
+                  <div class="feeds">
+                <div class="feed">
+                    <div class="head">
                     </div>
-                   </div>
-                <div class="feeds">
-                    <div class="feed">
-                        <div class="head">
-
-                        </div>
-                        <div class="user">
-                            <div class="profile-pic">
-                                <img src="images/profile-2.jpg" alt="">
-                            </div>
-                            <div class="info">
-                                <h3>Vũ Cao Phi</h3>
-                                <small>Tân Phú, 15 phút </small>
-                            </div>
-                            <SPAN class="edit"><i class="uil uil-ellipsis-h"></i></SPAN>
+                    <div class="user">
+                        <div class="profile-pic">
+                            <img src="../images/<?php  echo $c['location_img'];?>" alt="">
                         </div>
 
-                        <div class="photo">
-                            <img src="images/feed-1.jpg" alt="">
+                        <div class="info">
+                            <h3><?php 
+                               echo $c['name'];
+                            ?></h3>
+                            <small>Tân Phú, 15 phút </small>
                         </div>
-
-                        <div class="action-button">
-                            <div class="interaction-button">
-                                <span><i class="uil uil-thumbs-up"></i></span>
-                                <span><i class="uil uil-comment"></i></span>
-                            </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil uil-share"></i></span>
-                            </div>
+                        <SPAN class="edit"><i class="uil uil-ellipsis-h"></i></SPAN>
+                    </div>
+                   
+                    <div class="content">
+                        <p class="title"><?php echo $val['title']?></p>
+                        <p class="written_text"><?php echo $val["written_text"]?></p>
+                    </div>
+                    <div class="photo">
+                        <img src="../images/<?php echo $val["img_location"]?>" alt="">
+                   
+                    <div class="action-button">
+                        <div class="interaction-button">
+                            <span><i class="uil uil-thumbs-up"></i></span>
+                            <span><i class="uil uil-comment"></i></span>
                         </div>
-
-                        <div class="liked-by">
-                            <p>Được thích tận 1 tỷ người</p>
+                        <div class="bookmark">
+                            <span><i class="uil uil uil-share"></i></span>
                         </div>
-
-                        <div class="caption">
-                            <p><b>Hà Tấn Luân</b> Wibu mãi đỉnh
-                                <span class="hash-tag">#lifestyle</span>
-                            </p>
-                        </div>
-                        <div class="comments text-muted">1 tỷ bình luận</div>
-                        <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
-
                     </div>
 
+                    <div class="liked-by">
+                        <p>Được thích tận 1 tỷ người</p>
+                    </div>
 
+                    <div class="caption">
+                        <p><b>Hà Tấn Luân</b> Wibu mãi đỉnh
+                            <span class="hash-tag">#lifestyle</span>
+                        </p>
+                    </div>
+                    <div class="comments text-muted">1 tỷ bình luận</div>
+                    <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
                 </div>
+            </div>
+            </div>
+            
+                   <?php endforeach;?>
             </div>
 
             <?php  include "./component/right.php"?>

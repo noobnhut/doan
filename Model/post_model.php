@@ -1,5 +1,6 @@
 <?php 
-include "../Util/db.php";
+require("../Util/db.php");
+
 include "../function.php";
 class post_model extends db
 {
@@ -12,6 +13,7 @@ class post_model extends db
    private $title;
    private $img_location;
    private $link_video;
+
    function __construct($id='',$user_id='',$written_text='',$title='',$img_location='',$link_video='')
    {
     $this->id=$id;
@@ -22,11 +24,27 @@ class post_model extends db
     $this->link_video=$link_video;
 
    }
+
    function getPost()
    {
     return $this->getTable($this->table_name);
    }
 
+   function detailUser($id)
+   {
+    $sql="select * from $this->table_user where id=? ";
+		$arr= array($id);
+		$data= parent::selectQuery($sql, $arr);
+		if (Count($data)>0)
+			return $data[0];
+		return 0;
+   }
+   function getPostByIdUser($user_id)
+   {
+    $sql="select * from $this->table_name where user_id=? ";
+    $arr= array($user_id);
+		return $this->selectQuery($sql,$arr);
+   }
    function getUser()
    {
     return $this->getTable($this->table_user);
@@ -34,31 +52,14 @@ class post_model extends db
    
    function detail($id)
    {
-    $sql="select * from user_post where id=? ";
+    $sql="select * from $this->table_name where id=? ";
 		$arr= array($id);
 		$data= parent::selectQuery($sql, $arr);
 		if (Count($data)>0)
 			return $data[0];
 		return 0;
    }
-
-   function filter($title, $user_id='all')
-	 {
-		$sql="select * from user_post where 1 ";
-		$arr= array();
-		if ($title !='')
-		{
-			$sql .=" and book_title like ? ";
-			$arr[]="%$title%";
-		}
-		if ($user_id !='all')
-		{
-			$sql .=" and user_id= ? ";
-			$arr[]=$user_id;
-		}
-		
-		return parent::selectQuery($sql, $arr);
-	 }
+  
 
     function delete($id)
 	{
