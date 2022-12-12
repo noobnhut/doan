@@ -43,10 +43,7 @@
                     <span><i class="uil uil-user"></i></span>
                     <h3>Thông tin cá nhân</h3>
                 </a>
-                <a class="menu-item " href="./post.php">
-                    <span><i class="uil uil-upload-alt"></i></span>
-                    <h3>Bài viết</h3>
-                </a>
+              
                 <a class="menu-item " href="./post_img.php">
                     <span><i class="uil uil-image"></i></span>
                     <h3>Hình ảnh</h3>

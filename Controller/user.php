@@ -2,7 +2,7 @@
 include "../Model/user_model.php";
 
 
-
+session_start();
   function login()
   {
     $btn_login = $_POST["login"];
@@ -14,7 +14,7 @@ include "../Model/user_model.php";
     if(isset($btn_login)&&$id>1)
     {
      
-      session_start();
+      
          $_SESSION["is_user"]=true;
          $_SESSION["user_acc"]=$user_acc;
          $_SESSION["username"]=$c['name'];  
@@ -23,8 +23,9 @@ include "../Model/user_model.php";
     }
     else
       {
+       
         header("Location:http://localhost/doan/view/login.php");
-        
+      
       }
   }
   function register()
@@ -41,6 +42,7 @@ include "../Model/user_model.php";
     $b->registerUser();
     header("Location:http://localhost/doan/view/login.php");
  }
+ 
   }
   if(isset($_POST["login"]))
   {

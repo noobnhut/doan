@@ -42,6 +42,7 @@
 			<input type="password" placeholder="Nhập mật khẩu" name="password" />
 			<a href="#">Quên mật khẩu</a>
 			<button type="submit" name="login">Đăng nhập</button>
+			
 		</form>
 	</div>
 	

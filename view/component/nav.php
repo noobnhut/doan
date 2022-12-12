@@ -9,7 +9,7 @@
                     />
                 </div>
                 <div class="create">
-                    <label class="btn btn-primary" for="">Đăng bài</label>
+                  
                     <div class="profile-pic">
                     <?php 
                            session_start();
