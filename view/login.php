@@ -22,10 +22,10 @@
     <link rel="stylesheet" href="./css/login.css" />
   </head>
   <body>
-  
+ 
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="" method="POST">
+		<form action="../Controller/user.php" method="POSt" >
 			<h1>Tạo tài khoản</h1>
 			<input type="text" placeholder="Tên tài khoản" name="user_acc" />
 			<input type="text" placeholder="Họ và tên" name="username" />
@@ -36,7 +36,7 @@
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="../Controller/user.php" method="POST">
+		<form method="POST" action="../Controller/user.php" >
 			<h1>Đăng nhập</h1>
 			<input type="text" placeholder="Nhập tài khoản" name="user_acc"/>
 			<input type="password" placeholder="Nhập mật khẩu" name="password" />

@@ -1,8 +1,8 @@
 <?php 
 include "../Model/user_model.php";
 
-class user
-{
+
+
   function login()
   {
     $btn_login = $_POST["login"];
@@ -27,23 +27,30 @@ class user
         
       }
   }
-}
+  function register()
+  {
+ $btn_register = $_POST["register"];
+ if(isset($btn_register))
+ { 
+    $username = $_POST["username"];
+    $user_acc=$_POST["user_acc"];
+    $password=$_POST["password"];
+    $numberphone=$_POST["numberphone"];
+  
+    $b = new user_model(null,$username,$user_acc,$password,$numberphone,'item_up.png');
+    $b->registerUser();
+    header("Location:http://localhost/doan/view/login.php");
+ }
+  }
+  if(isset($_POST["login"]))
+  {
+    login();
+  }
+  if(isset($_POST["register"]))
+  {
+    register();
+  }
 
- //$btn_register = $_POST["register"];
-//  if(isset($btn_register))
-//  { 
-//   $username = $_POST["username"];
-//   $user_acc=$_POST["user_acc"];
-//   $password=$_POST["password"];
-//   $numberphone=$_POST["numberphone"];
- 
-//     $b = new user_model(null,$username,$user_acc,$password,$numberphone,'item_up.png');
-//     $b->registerUser();
-//     header("Location:http://localhost/doan/view/login.php");
- 
-//  }
-//  else
-//  {
-//     echo "thoi xong";
-//  }
+
+
 ?>
