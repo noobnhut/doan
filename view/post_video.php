@@ -64,16 +64,22 @@
             </div>
 
             <div class="middle">
-                <div class="content_post">
-                    <form action="#">
+            <div class="content_post">
+                    <form action="../Controller/post.php" method="POST" enctype="multipart/form-data">
                         <h2>Bài viết</h2>
                         <label for="title">Tên bài viết:</label>
-                        <input type="text" class="field" name="title_post" placeholder="Nhập tên bài viết">
-                        <label for="title">Đường dẫn:</label>
-                        <input type="text" class="field" name="title_post" placeholder="Nhập đường dẫn">
-                        <button class="btn">Đăng bài viết</button>
-                        <button class="btn">Hủy đăng bài</button>
-
+                        <input type="text" class="field" name="title" placeholder="Nhập tên bài viết">
+                        <label for="title">Nội dung bài viết</label>
+                        <textarea placeholder="Nhập nội dung bài đăng" class="field" name="written_text"></textarea>
+                        <label for="title">Tải ảnh lên:</label>
+                        <input type="file" name="img_location" id="file" accept="video/*" hidden>
+                        <div class="img-area" data-img="">
+                            <i class='icon uil uil-upload'></i>
+                            <p>Chọn video tải lên nào </p>
+                        
+                        <label name="up_img" class="select-image" >Chọn video nào</label>
+                       </div>
+                        <button name="up_post" class="btn">Đăng bài viết</button>
                     </form>
                 </div>
 
@@ -83,7 +89,38 @@
             <?php  include "./component/right.php"?>
     </main>
 
-    <script src="index.js"></script>
+    <script >
+        
+
+const selectImage = document.querySelector('.select-image');
+const inputFile = document.querySelector('#file');
+const imgArea = document.querySelector('.img-area');
+
+selectImage.addEventListener('click', function () {
+	inputFile.click();
+});
+
+inputFile.addEventListener('change', function () {
+	const image = this.files[0]
+	if(image.size < 20000000000000) {
+		const reader = new FileReader();
+		reader.onload = ()=> {
+			const allImg = imgArea.querySelectorAll('video');
+			allImg.forEach(item=> item.remove());
+			const imgUrl = reader.result;
+			const img = document.createElement('video');
+			img.src = imgUrl;
+			imgArea.appendChild(img);
+			imgArea.classList.add('active');
+			imgArea.dataset.img = image.name;
+		}
+		reader.readAsDataURL(image);
+	} else {
+		alert("Image size more than 2MB");
+	}
+});
+
+    </script>
 </body>
 
 </html>

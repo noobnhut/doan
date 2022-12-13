@@ -63,7 +63,6 @@
 
         <div class="middle">
 
-
             <form class="create-post">
                 <div class="profile-pic">
                     <img src="images/profile-8.jpg" alt="">

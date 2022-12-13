@@ -74,10 +74,10 @@
                 </form>
                <?php 
                 require("../Model/post_model.php");
-                $id = $_SESSION["id"];
-                $a = new post_model();
-                $b=$a-> getPostByIdUser($id);
-                $c=$a->detailUser($id);
+                $id_user = $_SESSION["id"];
+                $post = new post_model();
+                $post_item=$post-> getPostByIdUser($id_user);
+                $user=$post->detailUser($id_user);
                
                 ?> 
                 <div class="contents">
@@ -88,16 +88,16 @@
                         <div class="information">
                             <div class="info_space">
                                 <div class="avatar">
-                                <img style="height: 300px;" src="../images/<?php echo $c["location_img"]?>" alt="">
+                                <img style="height: 300px;" src="../images/<?php echo $user["location_img"]?>" alt="">
                                 </div>
                             </div>
                             <div class="info_space">
                                 <h4 class="info">Họ và tên:</h4>
-                                <p class="info_text"><?php echo $c["name"]?></p>
+                                <p class="info_text"><?php echo $user["name"]?></p>
                             </div>
                             <div class="info_space">
                                 <h4 class="info">Số điện thoại</h4>
-                                <p class="info_text"><?php echo $c["numberphone"]?></p>
+                                <p class="info_text"><?php echo $user["numberphone"]?></p>
                             </div>
                             <div class="info_space">
                            <input type="submit" value="Chỉnh sửa " class="btn btn-primary"> 
@@ -107,7 +107,7 @@
                     </div>
                 </div>
                    <?php 
-                      foreach ($b as $x => $val):
+                      foreach ($post_item as $x => $val):
                     ?> 
                   <div class="feeds">
                 <div class="feed">
@@ -115,12 +115,12 @@
                     </div>
                     <div class="user">
                         <div class="profile-pic">
-                            <img src="../images/<?php  echo $c['location_img'];?>" alt="">
+                            <img src="../images/<?php  echo $user['location_img'];?>" alt="">
                         </div>
 
                         <div class="info">
                             <h3><?php 
-                               echo $c['name'];
+                               echo $user['name'];
                             ?></h3>
                             <small>Tân Phú, 15 phút </small>
                         </div>
