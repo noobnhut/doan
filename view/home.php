@@ -16,24 +16,24 @@
 
 <body>
     <?php
-    include "./component/nav.php" ;
-   ?>
+    include "./component/nav.php";
+    ?>
     <main>
         <div class="container">
             <div class="left">
                 <a class="profile">
                     <?php
-               include_once "../Model/user_model.php";
+                    include_once "../Model/user_model.php";
                     if ($_SESSION["is_user"] == true)
                         echo '<div class="profile-pic">';
-                        
-                        $id= $_SESSION['id'];
-                        $user = new user_model();
-                        $value=$user->detailUser($id);
-                    echo '<img src="../images/user/' . $value["location_img"] .'">';
+
+                    $id = $_SESSION['id'];
+                    $user = new user_model();
+                    $value = $user->detailUser($id);
+                    echo '<img src="../images/user/' . $value["location_img"] . '">';
                     echo '</div>';
                     echo ' <div class="handle">';
-                    echo "<h4>" .$value["name"] . "</h4>";
+                    echo "<h4>" . $value["name"] . "</h4>";
                     echo "<p>@" . $value["user_acc"] . "</p>";
 
                     ?>
@@ -69,63 +69,64 @@
 
         <div class="middle">
 
-           
-            <?php 
-                    require("../Model/post_model.php");
-                    
-           
-                    $a = new post_model();
-                    $b=$a->getPost();
-                    
-                    foreach ($b as $x => $val):
-                    $id =$val['user_id'];
-                    $c=$a->detailUser($id);
-                   
-                   ?>
-            <div class="feeds">
-                <div class="feed">
-                    <div class="head">
 
-                    </div>
-                    <div class="user">
-                        <div class="profile-pic">
-                            <img src="../images/<?php  echo $c['location_img'];?>" alt="">
+            <?php
+            require("../Model/post_model.php");
+
+
+            $a = new post_model();
+            $b = $a->getPost();
+
+            foreach ($b as $x => $val) :
+                $id = $val['user_id'];
+                $c = $a->detailUser($id);
+
+            ?>
+                <div class="feeds">
+                    <div class="feed">
+                        <div class="head">
+
+                        </div>
+                        <div class="user">
+                            <div class="profile-pic">
+                                <img src="../images/user/<?php echo $c['location_img']; ?>" alt="">
+                            </div>
+
+                            <div class="info">
+                                <h3><?php
+
+                                    echo $c['name'];
+                                    ?></h3>
+                                <small>Tân Phú, 15 phút </small>
+                            </div>
+                            
+                           
                         </div>
 
-                        <div class="info">
-                            <h3><?php 
-                              
-                               echo $c['name'];
-                            ?></h3>
-                            <small>Tân Phú, 15 phút </small>
+                        <div class="content">
+                            <p class="title"><?php echo $val['title'] ?></p>
+                            <p class="written_text"><?php echo $val["written_text"] ?></p>
                         </div>
-                        <SPAN class="edit"><i class="uil uil-ellipsis-h"></i></SPAN>
-                    </div>
-                   
-                    <div class="content">
-                        <p class="title"><?php echo $val['title']?></p>
-                        <p class="written_text"><?php echo $val["written_text"]?></p>
-                    </div>
-                    <div class="photo">
-                        <img src="../images/post/<?php echo $val["img_location"]?>" alt="">
-                   
-                    <div class="action-button">
-                        <div class="interaction-button">
-                            <span><i class="uil uil-thumbs-up"></i></span>
-                            <span><i class="uil uil-comment"></i></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><i class="uil uil uil-share"></i></span>
-                        </div>
-                    </div>
+                        <div class="photo">
+                            <img src="../images/post/<?php echo $val["img_location"] ?>" alt="">
 
-                   
-                  
-                    <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
+                            <div class="action-button">
+                                <div class="interaction-button">
+                                    <span><i class="uil uil-thumbs-up"></i></span>
+                                    <span><i class="uil uil-comment"></i></span>
+                                </div>
+                                <div class="bookmark">
+                                    <span><i class="uil uil uil-share"></i></span>
+                                </div>
+                            </div>
+
+
+
+                            <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-                    <?php endforeach;?>
+            <?php endforeach; ?>
         </div>
 
         <?php include "./component/right.php" ?>

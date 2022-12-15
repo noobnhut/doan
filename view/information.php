@@ -114,7 +114,7 @@
                     </div>
                     <div class="user">
                         <div class="profile-pic">
-                            <img src="../images/<?php  echo $user['location_img'];?>" alt="">
+                            <img src="../images/user<?php  echo $user['location_img'];?>" alt="">
                         </div>
 
                         <div class="info">
@@ -123,7 +123,9 @@
                             ?></h3>
                             <small>Tân Phú, 15 phút </small>
                         </div>
-                        <SPAN class="edit"><i class="uil uil-ellipsis-h"></i></SPAN>
+                        <form action="../Model/user_model.php">
+                            <input type="submit" name="delete" placeholder="Xóa">
+                        </form>
                     </div>
                    
                     <div class="content">

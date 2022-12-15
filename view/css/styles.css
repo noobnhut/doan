@@ -260,7 +260,7 @@ main .container .left .profle{
 
 .middle .feed .head{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 
