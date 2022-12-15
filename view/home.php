@@ -63,13 +63,7 @@
 
         <div class="middle">
 
-            <form class="create-post">
-                <div class="profile-pic">
-                    <img src="images/profile-8.jpg" alt="">
-                </div>
-                <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
-                <input type="submit" value="Đăng bài" class="btn btn-primary">
-            </form>
+           
             <?php 
                     require("../Model/post_model.php");
                     
@@ -119,16 +113,8 @@
                         </div>
                     </div>
 
-                    <div class="liked-by">
-                        <p>Được thích tận 1 tỷ người</p>
-                    </div>
-
-                    <div class="caption">
-                        <p><b>Hà Tấn Luân</b> Wibu mãi đỉnh
-                            <span class="hash-tag">#lifestyle</span>
-                        </p>
-                    </div>
-                    <div class="comments text-muted">1 tỷ bình luận</div>
+                   
+                  
                     <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
                 </div>
             </div>

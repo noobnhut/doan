@@ -12,8 +12,34 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="./css/styles.css" />
-</head>
 
+</head>
+<style>
+
+main{
+    margin-top:5rem ;
+}
+form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+    width: 100%;
+	text-align: center;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+
+</style>
 <body>
 
   <?php include "./component/nav.php"?>
@@ -76,79 +102,32 @@
                 ?> 
                 <div class="contents">
                     <div class="content">
-                        <div class="head">
-                            <h3>Thông tin cá nhân</h3>
-                        </div>
-                        <div class="information">
-                       
+                        
+                         <div class="information">
                             <div class="info_space">
-                                <div class="avatar">
-                                <img style="height: 300px;" src="../images/<?php echo $user["location_img"]?>" alt="">
-                                </div>
+                                <form action="../Controller/user.php" method="POST" enctype="multipart/form-data">
+                            <h1>Chỉnh sửa thông tin cá nhân</h1>
+                            <input type="text" placeholder="Tên tài khoản" name="id_user" value="<?php echo $id_user?>" />
+                            <input type="text" placeholder="Tên tài khoản" name="edit_user_acc" value="<?php echo $user['user_acc']?>" />
+                            <input type="text" placeholder="Họ và tên" name="edit_username" value="<?php echo $user['name']?>" />
+                            <input type="text" placeholder="Số điện thoại" name="edit_numberphone"value="<?php echo $user['numberphone']?>"/>
+                            <input type="text" placeholder="Mật khẩu" name="edit_password"value="<?php echo $user['password']?>"  />
+                            <input type="text" name="img_old" value="<?php echo $user['location_img']?>">
+                            <input type="file" name="img" accept="image/*" >
+                            <input type="submit" name="edit" value="Lưu chỉnh sửa"></input>
+                        </form>
                             </div>
-                            <div class="info_space">
-                                <h4 class="info">Họ và tên:</h4>
-                                <p class="info_text"><?php echo $user["name"]?></p>
-                            </div>
-                            <div class="info_space">
-                                <h4 class="info">Số điện thoại</h4>
-                                <p class="info_text"><?php echo $user["numberphone"]?></p>
-                            </div>
-                            <div class="info_space">
-                           <a href="./edit_user.php" class="btn btn-primary">Chỉnh sửa thông tin </a>
-                            </div>
-
-                        </div>
+                            
+                         </div>
+                        
                     </div>
                 </div>
-                   <?php 
-                      foreach ($post_item as $x => $val):
-                    ?> 
-                  <div class="feeds">
-                <div class="feed">
-                    <div class="head">
-                    </div>
-                    <div class="user">
-                        <div class="profile-pic">
-                            <img src="../images/<?php  echo $user['location_img'];?>" alt="">
-                        </div>
-
-                        <div class="info">
-                            <h3><?php 
-                               echo $user['name'];
-                            ?></h3>
-                            <small>Tân Phú, 15 phút </small>
-                        </div>
-                        <SPAN class="edit"><i class="uil uil-ellipsis-h"></i></SPAN>
-                    </div>
-                   
-                    <div class="content">
-                        <p class="title"><?php echo $val['title']?></p>
-                        <p class="written_text"><?php echo $val["written_text"]?></p>
-                    </div>
-                    <div class="photo">
-                        <img src="../images/<?php echo $val["img_location"]?>" alt="">
-                   
-                    <div class="action-button">
-                        <div class="interaction-button">
-                            <span><i class="uil uil-thumbs-up"></i></span>
-                            <span><i class="uil uil-comment"></i></span>
-                        </div>
-                        <div class="bookmark">
-                            <span><i class="uil uil uil-share"></i></span>
-                        </div>
-                    </div>
-
-                   
-                    <input type="text" placeholder="Nhập nội dung văn bản ?" id="create-post" autocomplete="off">
-                </div>
-            </div>
-            </div>
-            
-                   <?php endforeach;?>
+             
+                 
             </div>
 
             <?php  include "./component/right.php"?>
+</div>
     </main>
 
     <script src="index.js"></script>

@@ -234,6 +234,7 @@ main .container .left .profle{
     margin-left: auto;
     margin-right: auto;
 }
+
 .middle .content .information .info_space{
     display: flex;
     padding: 0.5rem;
@@ -244,25 +245,8 @@ main .container .left .profle{
     padding-right: 0.4rem;
 }
 
-.middle .create-post{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1rem;
-    background: var(--color-white);
-    padding: 0.4rem var(--card-padding);
-    border-radius: var(--border-radius);
-}
 
-.middle .create-post input[type="text"]{
-    justify-self: start;
-    width: 100%;
-    padding-left: 1rem;
-    background: transparent;
-    color: var(--color-dark);
-    margin-right: 1rem;
-}
+
 
 .middle .contents .content,
 .middle .feeds .feed{
