@@ -25,12 +25,15 @@
  
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="../Controller/user.php" method="POSt" >
+		<form action="../Controller/user.php" method="POSt" enctype="multipart/form-data" >
 			<h1>Tạo tài khoản</h1>
 			<input type="text" placeholder="Tên tài khoản" name="user_acc" />
 			<input type="text" placeholder="Họ và tên" name="username" />
 			<input type="text" placeholder="Số điện thoại" name="numberphone" />
 			<input type="password" placeholder="Mật khẩu"  name="password"/>
+			<label for="title">Chọn ảnh đại diện:</label>
+			
+            <input type="file" name="img_location" id="file" accept="image/*" >
 			<button type="submit" name="register">Đăng ký</button>
 			
 		</form>

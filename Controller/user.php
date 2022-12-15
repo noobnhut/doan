@@ -12,13 +12,13 @@ session_start();
     $b = new user_model();
     $id = $b->loginUser($user_acc,$password);
     $c=$b->detailUser($id);
-    if(isset($btn_login)&&$id>1)
+    if(isset($btn_login)&&$id>=1)
     {    $_SESSION['id']=$id;
          $_SESSION["is_user"]=true;
          $_SESSION["user_acc"]=$user_acc;
          $_SESSION["username"]=$c['name'];  
          $_SESSION["location_img"]=$c['location_img'];
-           header("Location:http://localhost/doan/view/home.php");
+         header("Location:http://localhost/doan/view/home.php");
     }
     else
       {
@@ -37,8 +37,21 @@ session_start();
     $user_acc=$_POST["user_acc"];
     $password=$_POST["password"];
     $numberphone=$_POST["numberphone"];
-    
-    $b = new user_model(null,$username,$user_acc,$password,$numberphone,'');
+    $img_default ='avatar_ddd.png' ;
+    $img_location=$_FILES['img']['name'];
+    if( $img_location != '' )
+    {
+        $insert_img = $_FILES['img']['name'];
+        $image=basename($_FILES['img']['name']);
+        $image=str_replace(' ','|',$image);
+        $tmppath="../images/user/".$image;
+        move_uploaded_file($_FILES['img']['tmp_name'],$tmppath);
+    }
+    else
+    {  
+        $insert_img =$img_default;
+    }
+    $b = new user_model(null,$username,$user_acc,$password,$numberphone,$insert_img);
     $b->registerUser();
     header("Location:http://localhost/doan/view/login.php");
  }
@@ -59,7 +72,7 @@ session_start();
         $update_img = $_FILES['img']['name'];
         $image=basename($_FILES['img']['name']);
         $image=str_replace(' ','|',$image);
-        $tmppath="../images/".$image;
+        $tmppath="../images/user/".$image;
         move_uploaded_file($_FILES['img']['tmp_name'],$tmppath);
 
         $img = '../images/' .$img_old;
@@ -71,8 +84,9 @@ session_start();
     }
     $user = new user_model($id,$username,$user_acc,$password,$numberphone,$update_img);
     $user->updateUser();
+    
     header("Location:http://localhost/doan/view/home.php");
-
+   
   }
 
   if(isset($_POST["login"]))
@@ -83,12 +97,14 @@ session_start();
   if(isset($_POST["register"]))
   {
     register();
+    session_reset(); 
   }
   
 
   if(isset($_POST['edit']))
   {
     update();
+    session_reset(); 
   }
 
 

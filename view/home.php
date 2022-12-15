@@ -16,19 +16,25 @@
 
 <body>
     <?php
-    include "./component/nav.php" ?>
+    include "./component/nav.php" ;
+   ?>
     <main>
         <div class="container">
             <div class="left">
                 <a class="profile">
                     <?php
+               include_once "../Model/user_model.php";
                     if ($_SESSION["is_user"] == true)
                         echo '<div class="profile-pic">';
-                    echo '<img src="../images/' . $_SESSION["location_img"] . '">';
+                        
+                        $id= $_SESSION['id'];
+                        $user = new user_model();
+                        $value=$user->detailUser($id);
+                    echo '<img src="../images/user/' . $value["location_img"] .'">';
                     echo '</div>';
                     echo ' <div class="handle">';
-                    echo "<h4>" . $_SESSION["username"] . "</h4>";
-                    echo "<p>@" . $_SESSION["user_acc"] . "</p>";
+                    echo "<h4>" .$value["name"] . "</h4>";
+                    echo "<p>@" . $value["user_acc"] . "</p>";
 
                     ?>
             </div>
@@ -101,7 +107,7 @@
                         <p class="written_text"><?php echo $val["written_text"]?></p>
                     </div>
                     <div class="photo">
-                        <img src="../images/<?php echo $val["img_location"]?>" alt="">
+                        <img src="../images/post/<?php echo $val["img_location"]?>" alt="">
                    
                     <div class="action-button">
                         <div class="interaction-button">

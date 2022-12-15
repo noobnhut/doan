@@ -16,7 +16,7 @@ function insertPost()
   $image=basename($_FILES['img_location']['name']);
   $image=str_replace(' ','|',$image);
   
-  $tmppath="../images/".$image;
+  $tmppath="../images/post/".$image;
   move_uploaded_file($_FILES['img_location']['tmp_name'],$tmppath);
   
   $post = new post_model(null,$user_id,$written_text,$title,$img_location,''); 

@@ -24,19 +24,23 @@
 
             <div class="left">
             <a class="profile">
-                           <?php 
-                          
-                           if($_SESSION["is_user"]==true)
-                           echo '<div class="profile-pic">';
-                           echo '<img src="../images/'.$_SESSION["location_img"].'">';
-                           echo '</div>';
-                           echo ' <div class="handle">';                     
-                              echo "<h4>" . $_SESSION["username"] . "</h4>";
-                              echo "<p>@" . $_SESSION["user_acc"] . "</p>";
+                    <?php
+               include_once "../Model/user_model.php";
+                    if ($_SESSION["is_user"] == true)
+                        echo '<div class="profile-pic">';
+                        
+                        $id= $_SESSION['id'];
+                        $user = new user_model();
+                        $value=$user->detailUser($id);
+                    echo '<img src="../images/user/' . $value["location_img"] .'">';
+                    echo '</div>';
+                    echo ' <div class="handle">';
+                    echo "<h4>" .$value["name"] . "</h4>";
+                    echo "<p>@" . $value["user_acc"] . "</p>";
 
-                            ?>
-                      </div>
-                  </a>
+                    ?>
+            </div>
+            </a>
                 <div class="sidebar">
                     <a class="menu-item " href="./home.php">
                         <span><i class="uil uil-home"></i></span>
@@ -55,10 +59,11 @@
                         <span><i class="uil uil-video"></i></span>
                         <h3>Video</h3>
                     </a>
-                    <a class="menu-item ">
-                        <span><i class="uil uil-exit"></i></span>
-                        <h3>Đăng xuất</h3>
-                    </a>
+                    <a class="menu-item" href="../Controller/logout.php">
+
+                    <span><i class="uil uil-exit"></i></span>
+                    <h3>Đăng xuất</h3>
+                </a>
 
 
                 </div>

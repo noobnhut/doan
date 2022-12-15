@@ -1,5 +1,5 @@
 <?php  
-require("../Util/db.php");
+include_once("../Util/db.php");
   class user_model extends db
     {
       private $id;
@@ -52,18 +52,14 @@ require("../Util/db.php");
        //  chi tiet 1 dong -> dang array()
        function detailUser($id)
        {
-         $sql="select * from $this->table_name where id=? ";
+         $sql="select * from $this->table_name where id= ? ";
          $arr= array($id);
          $data= parent::selectQuery($sql, $arr);
          if (Count($data)>0)
            return $data[0];
          return 0;
        }
-    function searchDB($keyword, $var)
-    {
-      $sql="SELECT * FROM $this->table_name WHERE `$var` LIKE :keyword;";
-      return  $this->search($keyword,$sql);
-    }
+   
     function loginUser($username,$password)
    {
             $sql="select id from $this->table_name  where user_acc = ? and password = ?";

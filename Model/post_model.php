@@ -1,5 +1,5 @@
 <?php 
-require("../Util/db.php");
+include_once("../Util/db.php");
 
 include "../function.php";
 class post_model extends db
